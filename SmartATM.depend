@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1620993141 source:d:\documents\smartatm\atm_function.cpp
+	<string>
+	<fstream>
+	<ctime>
+	<iomanip>
+	<conio.h>
+	<unistd.h>
+	<windows.h>
+	"Account_Function.h"
+	"ATM_Function.h"
+
+1620992874 d:\documents\smartatm\atm_function.h
+	<iostream>
+
+1620991819 source:d:\documents\smartatm\main.cpp
+	<iostream>
+	<unistd.h>
+	<conio.h>
+	"Account_Function.h"
+	"ATM_Function.h"
+
+1620991360 source:d:\documents\smartatm\account_function.cpp
+	<unistd.h>
+	<iostream>
+	<string>
+	<fstream>
+	<conio.h>
+	<windows.h>
+	"Account_Function.h"
+
+1620987871 d:\documents\smartatm\account_function.h
+	<iostream>
+	<string>
+
