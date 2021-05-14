@@ -90,7 +90,7 @@ bool ATM::Sign_Up()
     cout << "Chuc Mung Ban Da Tao Tai Khoan Thanh Cong!!!" << '\n';
     cout << "ID cua ban la:              " << ID << '\n';
     cout << "So du tai khoan cua ban la: " << "0 VND" << '\n';
-    cout << "*Luu y: Tuyet Doi Khong De Nguoi Khac Biet ID Va Mat Khau Cua Ban" << '\n';
+    cout << "*Luu y: Tuyet Doi Khong De Nguoi Khac Biet Mat Khau Cua Ban" << '\n';
 
     time_t now = time(0);
     Update_History(ID, "Tao Tai Khoan Thanh Cong", ctime(&now), 0);
