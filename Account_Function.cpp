@@ -26,7 +26,7 @@ void Notice_Sign_In_Fail()
     system("cls");
 }
 
-string convert_balance(int balance)
+string convert_balance(ll balance)
 {
     string res = to_string(balance);
     int Count = 0;
@@ -300,7 +300,7 @@ void Out_Stream(const string &Direct, string content)
     File.close();
 }
 
-bool Check_Money(const int &Money, const int &User_balance, const int &ATM_balance, int value[], int number[])
+bool Check_Money(const ll &Money, const ll &User_balance, const ll &ATM_balance, ll value[], ll number[])
 {
     bool success = 1;
     if(Money % 1000) {
@@ -318,10 +318,10 @@ bool Check_Money(const int &Money, const int &User_balance, const int &ATM_balan
     }
     else
     {
-        int money = Money;
+        ll money = Money;
         for(int i = 0; i < 9; i++)
         {
-            int v = value[i] * 1000;
+            ll v = value[i] * 1000;
             money -= min(number[i], money / v) * v;
         }
         if(money || Money > ATM_balance * 1000)

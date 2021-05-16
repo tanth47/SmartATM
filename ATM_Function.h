@@ -1,13 +1,14 @@
 #include <iostream>
+#define ll long long
 
 class ATM
 {
     private:
         string ID;                                                  // ID cua nguoi dung
-        int Count = 0;                                              // Bien tao ID
-        int value[9] = {500, 200, 100, 50, 20, 10, 5, 2, 1};        // Gia tri tien Viet Nam
-        int number[9];                                              // So luong cac to tien
-        int ATM_balance = 0, User_balance = 0;                      // So du cua cay ATM va nguoi dung
+        ll Count = 0;                                              // Bien tao ID
+        ll value[9] = {500, 200, 100, 50, 20, 10, 5, 2, 1};        // Gia tri tien Viet Nam
+        ll number[9];                                              // So luong cac to tien
+        ll ATM_balance = 0, User_balance = 0;                      // So du cua cay ATM va nguoi dung
     public:
         ATM();                                                                                             // constructor
 
@@ -19,7 +20,7 @@ class ATM
 
         void Update_State();                                                                               // Update cac bien private vao file
 
-        void Update_History(const string &ID, const string &content, const char* Time, const int &balance);  // Cap nhat lich su vao file
+        void Update_History(const string &ID, const string &content, const char* Time, const ll &balance);  // Cap nhat lich su vao file
 
         bool Sign_Up();                                                                                    // Dang ki
 

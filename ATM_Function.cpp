@@ -61,7 +61,7 @@ void ATM::Update_State()
     out_file.close();
 }
 
-void ATM::Update_History(const string &ID, const string &content, const char* Time, const int &balance)
+void ATM::Update_History(const string &ID, const string &content, const char* Time, const ll &balance)
 {
     string direct = "History/" + ID + ".txt";
     ofstream File(direct , ios :: app);
@@ -151,13 +151,13 @@ void ATM::Send_money()
     cout << "Nhap vao so to tien ban gui tuong ung voi moi menh gia" << '\n';
     cout << "       Menh gia                    So luong           " << '\n';
 
-    int tmp = 0;
+    ll tmp = 0;
     for(int i = 0; i < 9; i++)
     {
         cout << setw(9) << setfill(' ') << value[i] << ".000vnd" ;
         cout << setw(22) << setfill(' ') << ' ';
 
-        int cnt;                                                        //
+        ll cnt;                                                        //
         cin >> cnt;                                                     // nhap vao so luong to tien menh gia value[i]
         number[i] += cnt;                                               // Tang so luong to tien trong ATM
         ATM_balance += cnt * value[i];                                  // Tang so du trong may ATM
@@ -178,7 +178,7 @@ void ATM::Check_balance()
 
 void ATM::Withdrawal()
 {
-    int Money;
+    ll Money;
     do{
         system("cls");
         cout << "So tien can rut la boi cua 1000 va toi thieu la 50.000 VND" << '\n';
@@ -198,8 +198,8 @@ void ATM::Withdrawal()
     cout << "       Menh gia                    So luong           " << '\n';
     for(int i = 0; i < 9; i++)
     {
-        int v = value[i] * 1000;
-        int cnt = min(number[i], Money / v);
+        ll v = value[i] * 1000;
+        ll cnt = min(number[i], Money / v);
         Money -= cnt * v;
         number[i] -= cnt;
         cout << setw(9) << setfill(' ') << value[i] << ".000vnd" ;
@@ -237,7 +237,7 @@ void ATM::Transfer()
     if(GetKeyState(0x1B) & 0x8000) return ;
 
     cout << "3. Nhap vao so tien can chuyen (So tien can chuyen phai la boi cua 1000).\n";
-    int Money;
+    ll Money;
     bool success = 1;
     cin >> Money;
     if(Money % 1000) {
@@ -262,7 +262,7 @@ void ATM::Transfer()
     Update_History(ID, "Chuyen tien den so tai khoan: " + Receiver_ID, ctime(&now), -Money * 1000);
 
     Direct = "Balance/" + Receiver_ID + ".txt";
-    int Receiver_balance;
+    ll Receiver_balance;
     File.open(Direct, ios::in);
     File >> Receiver_balance;
     Receiver_balance += Money;

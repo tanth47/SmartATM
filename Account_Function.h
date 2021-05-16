@@ -1,9 +1,10 @@
 #include <iostream>
 #include <string>
+#define ll long long
 
 using namespace std;
 
-string convert_balance(int balance); // Ham tra ve string bieu dien so tien duoi dang VND
+string convert_balance(ll balance); // Ham tra ve string bieu dien so tien duoi dang VND
 
 string Standardized(string &Name);  // Chuan hoa string Name
 
@@ -23,4 +24,4 @@ int check_Acc(const string &ID, const string &Password); // Kiem tra xem Acc co 
 
 void Out_Stream(const string &Direct, string content); // in content vao file
 
-bool Check_Money(const int &Money, const int &User_balance, const int &ATM_balance, int value[], int number[]);// kiem tra so tien can rut(Money) co hop le hay khong
+bool Check_Money(const ll &Money, const ll &User_balance, const ll &ATM_balance, ll value[], ll number[]);// kiem tra so tien can rut(Money) co hop le hay khong
